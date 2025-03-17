@@ -1,3 +1,3 @@
 <template>
-  <div>Request Received</div>
+  <div>Request</div>
 </template>
