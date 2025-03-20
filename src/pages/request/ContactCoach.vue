@@ -29,7 +29,6 @@ export default {
   methods: {
     submitForm() {
       this.formIsValid = true;
-      console.log('abram', this.email, this.message);
       if (
         this.email === '' ||
         !this.email.includes('@') ||
