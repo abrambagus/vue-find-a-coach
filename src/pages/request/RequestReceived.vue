@@ -15,7 +15,6 @@
       <h3 v-else>You haven't received any request yet!</h3>
     </base-card>
   </section>
-  {{ console.log('abram', hasRequests) }}
 </template>
 
 <script>
