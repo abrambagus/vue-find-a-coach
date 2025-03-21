@@ -33,13 +33,14 @@ export default {
   },
   async loadCoaches(context) {
     const response = await fetch(
-      `https://vue-http-demo-b73b6-default-rtdb.asia-southeast1.firebasedatabase.app/coaches.json`
+      'https://vue-http-demo-b73b6-default-rtdb.asia-southeast1.firebasedatabase.app/coaches.json'
     );
 
     const responseData = await response.json();
 
     if (!response.ok) {
-      // ...
+      const error = new Error(responseData.message || 'Failed to fetch!');
+      throw error;
     }
 
     const coaches = [];
