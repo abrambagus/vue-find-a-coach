@@ -10,7 +10,10 @@
           <router-link to="/request">Request</router-link>
         </li>
         <li v-else>
-          <router-link to="/auth"> Login </router-link>
+          <router-link to="/auth">Login</router-link>
+        </li>
+        <li v-if="isLoggedIn">
+          <base-button @click="logout">Logout</base-button>
         </li>
       </ul>
     </nav>
@@ -18,10 +21,17 @@
 </template>
 
 <script>
+import BaseButton from '../ui/BaseButton.vue';
 export default {
+  components: { BaseButton },
   computed: {
     isLoggedIn() {
       return this.$store.getters.isAuthenticated;
+    },
+  },
+  methods: {
+    logout() {
+      this.$store.dispatch('logout');
     },
   },
 };
