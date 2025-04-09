@@ -20,7 +20,6 @@ export default {
       );
       throw error;
     }
-    console.log(responseData);
     context.commit('setUser', {
       token: responseData.idToken,
       userId: responseData.localId,
@@ -49,7 +48,6 @@ export default {
       );
       throw error;
     }
-    console.log(responseData);
     context.commit('setUser', {
       token: responseData.idToken,
       userId: responseData.localId,
