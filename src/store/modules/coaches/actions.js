@@ -33,6 +33,7 @@ export default {
       id: userId,
     });
   },
+
   async loadCoaches(context, payload) {
     if (!payload.forceRefresh && !context.getters.shouldUpdate) {
       return;
@@ -58,6 +59,7 @@ export default {
         description: responseData[key].description,
         hourlyRate: responseData[key].hourlyRate,
         areas: responseData[key].areas,
+        id: key,
       };
       coaches.push(coach);
     }
